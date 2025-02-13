@@ -42,7 +42,12 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }} # set up AZURE_RBAC_CREDENTIALS secrets in your repository
-
+    - name: Create app settings
+      uses: catchco/azure-appservice-settings-env@latest
+      with:
+        file: 'configuration/configuration.template.json'
+        appname: ${{ env.AZURE_FUNCTIONAPP_NAME }}
+                
     - name: Create project folder
       run: |
         mkdir output
