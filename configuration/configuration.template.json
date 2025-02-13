@@ -1,0 +1,50 @@
+  {
+    appSettings: 
+[
+{
+    "name": "Sftp_11_disableConnectionCache",
+    "value": "false",
+    "slotSetting": false
+  },
+  {
+    "name": "Sftp_11_portNumber",
+    "value": "22",
+    "slotSetting": false
+  },
+  {
+    "name": "Sftp_11_rootDirectory",
+    "value": "/",
+    "slotSetting": false
+  },
+  {
+    "name": "Sftp_11_sshHostAddress",
+    "value": "jjsourceforftp.blob.core.windows.net",
+    "slotSetting": false
+  },
+  {
+    "name": "Sftp_11_username",
+    "value": "jjsourceforftp.test",
+    "slotSetting": false
+  },
+  {
+    "name": "Sftp_disableConnectionCache",
+    "value": "false",
+    "slotSetting": false
+  },
+  {
+    "name": "Sftp_portNumber",
+    "value": "22",
+    "slotSetting": false
+  },
+  {
+    "name": "Sftp_rootDirectory",
+    "value": "/",
+    "slotSetting": false
+  },
+  {
+    "name": "Sftp_sshHostAddress",
+    "value": "jjsourceforftp.blob.core.windows.net",
+    "slotSetting": false
+  }
+]
+}
