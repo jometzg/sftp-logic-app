@@ -23,6 +23,7 @@ on:
     branches: ["main"]
     paths:
       - 'workflows/**'
+      - 'configuration/**'
 
 env:
   AZURE_FUNCTIONAPP_NAME: 'jjblankfive'   # set this to your function app name on Azure
