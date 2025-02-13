@@ -46,7 +46,7 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }} # set up AZURE_RBAC_CREDENTIALS secrets in your repository
     
     - name: Create app settings
-      uses: catchco/azure-appservice-settings-env@latest
+      uses: catchco/azure-appservice-settings-env
       with:
         file: 'configuration/configuration.template.json'
         appname: ${{ env.AZURE_FUNCTIONAPP_NAME }}
