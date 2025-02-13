@@ -1,5 +1,7 @@
 # Secure File Transfer Logic App
-This is a demo on how to do infra as code and automated deployment of an SFTP logic app.
+This is a demo on how to do infra as code and automated deployment of a sample SFTP logic app.
+
+![alt text](./images/simple-sftp-copy.png "Simple SFTP Copy Logic App")
 
 This repo concentrates initially on how to handle the workflows, their connections and the secrets needed for these connections.
 
