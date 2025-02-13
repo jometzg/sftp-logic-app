@@ -1,0 +1,66 @@
+{
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "Create_folder": {
+                "type": "ServiceProvider",
+                "inputs": {
+                    "parameters": {
+                        "folderPath": "/dest"
+                    },
+                    "serviceProviderConfiguration": {
+                        "connectionName": "Sftp-1",
+                        "operationId": "createFolder",
+                        "serviceProviderId": "/serviceProviders/Sftp"
+                    }
+                },
+                "runAfter": {}
+            },
+            "Upload_file_content": {
+                "type": "ServiceProvider",
+                "inputs": {
+                    "parameters": {
+                        "filePath": "/dest/@{triggerBody()?['fileMetadata']?['name']}",
+                        "overWriteFileIfExists": true,
+                        "content": "@triggerBody()?['content']"
+                    },
+                    "serviceProviderConfiguration": {
+                        "connectionName": "Sftp-1",
+                        "operationId": "uploadFileContent",
+                        "serviceProviderId": "/serviceProviders/Sftp"
+                    }
+                },
+                "runAfter": {
+                    "Create_folder": [
+                        "SUCCEEDED"
+                    ]
+                }
+            }
+        },
+        "contentVersion": "1.0.0.0",
+        "outputs": {},
+        "triggers": {
+            "When_files_are_added_or_updated": {
+                "type": "ServiceProvider",
+                "kind": "Polling",
+                "inputs": {
+                    "parameters": {
+                        "folderPath": "/",
+                        "includeFileContent": false
+                    },
+                    "serviceProviderConfiguration": {
+                        "connectionName": "Sftp",
+                        "operationId": "whenFilesAreAddedOrModified",
+                        "serviceProviderId": "/serviceProviders/Sftp"
+                    }
+                },
+                "recurrence": {
+                    "interval": 1,
+                    "frequency": "Minute"
+                },
+                "splitOn": "@triggerOutputs()?['body']"
+            }
+        }
+    },
+    "kind": "Stateful"
+}
