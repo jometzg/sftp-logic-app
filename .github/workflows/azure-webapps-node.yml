@@ -54,8 +54,8 @@ jobs:
     - name: Create project folder
       run: |
         mkdir output
-        cp 'logicapps/host.json' 'output/'
-        cp 'logicapps/connections.json' 'output/'
+        cp 'workflows/host.json' 'output/'
+        cp 'workflows/connections.json' 'output/'
         cp -r 'workflows/sftp-copy' 'output/'
 
     - name: Easy Zip Files
