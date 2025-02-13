@@ -46,14 +46,10 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }} # set up AZURE_RBAC_CREDENTIALS secrets in your repository
     
     - name: Create app settings
-      uses: catchco/azure-appservice-settings-env
+      uses: azure/appservice-settings@v1
       with:
-        file: 'configuration/configuration.template.json'
-        appname: ${{ env.AZURE_FUNCTIONAPP_NAME }}
-    
-    - name: Set secrets
-      run: |
-        az webapp config appsettings set --resource-group ${{ env.AZURE_RESOURCE_GROUP }} --name ${{ env.AZURE_FUNCTIONAPP_NAME }} --settings Sftp_password=${{ secrets.logicapptrigger }} Sftp_11_password=${{ secrets.test }}
+        app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
+        app-settings-json: '${{ secrets.APP_SETTINGS }}' 
         
     - name: Create project folder
       run: |
