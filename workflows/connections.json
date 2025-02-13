@@ -1,0 +1,33 @@
+{
+    "managedApiConnections": {},
+    "serviceProviderConnections": {
+        "Sftp": {
+            "displayName": "source",
+            "parameterValues": {
+                "disableConnectionCache": "@appsetting('Sftp_disableConnectionCache')",
+                "password": "@appsetting('Sftp_password')",
+                "portNumber": "@appsetting('Sftp_portNumber')",
+                "rootDirectory": "@appsetting('Sftp_rootDirectory')",
+                "sshHostAddress": "@appsetting('Sftp_sshHostAddress')",
+                "username": "@appsetting('Sftp_username')"
+            },
+            "serviceProvider": {
+                "id": "/serviceProviders/Sftp"
+            }
+        },
+        "Sftp-1": {
+            "displayName": "destination",
+            "parameterValues": {
+                "disableConnectionCache": "@appsetting('Sftp_11_disableConnectionCache')",
+                "password": "@appsetting('Sftp_11_password')",
+                "portNumber": "@appsetting('Sftp_11_portNumber')",
+                "rootDirectory": "@appsetting('Sftp_11_rootDirectory')",
+                "sshHostAddress": "@appsetting('Sftp_11_sshHostAddress')",
+                "username": "@appsetting('Sftp_11_username')"
+            },
+            "serviceProvider": {
+                "id": "/serviceProviders/Sftp"
+            }
+        }
+    }
+}
