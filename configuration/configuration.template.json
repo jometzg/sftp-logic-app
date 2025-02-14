@@ -26,6 +26,11 @@
     "value": "jjsourceforftp.test",
     "slotSetting": false
   },
+   {
+    "name": "Sftp_11_password",
+    "value": "REDACTED",
+    "slotSetting": false
+  },
   {
     "name": "Sftp_disableConnectionCache",
     "value": "false",
@@ -44,6 +49,16 @@
   {
     "name": "Sftp_sshHostAddress",
     "value": "jjsourceforftp.blob.core.windows.net",
+    "slotSetting": false
+  },
+   {
+    "name": "Sftp_password",
+    "value": "REDACTED",
+    "slotSetting": false
+  },
+   {
+    "name": "Sftp_username",
+    "value": "jjsourceforftp.logicapptrigger",
     "slotSetting": false
   }
 ]
